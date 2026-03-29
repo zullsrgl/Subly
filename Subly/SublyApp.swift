@@ -11,7 +11,7 @@ import SwiftUI
 struct SublyApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RouteView()
         }
     }
 }
