@@ -8,6 +8,7 @@ import SwiftUI
 
 enum Route: Hashable {
     case home
+    case notifications
 }
 enum Sheet: Identifiable {
     case create
@@ -24,11 +25,13 @@ struct MainTabView: View {
         
         TabView(selection: $selectedTab) {
             NavigationStack(path: $path) {
-                HomeView(activeSheet: $activeSheet)
+                HomeView(activeSheet: $activeSheet, path: $path)
                     .navigationDestination(for: Route.self) { route in
                         switch route {
-                        case .home: HomeView(activeSheet: $activeSheet)
-                            
+                        case .notifications:
+                            NotificationView()
+                        case .home:
+                            EmptyView() 
                         }
                     }
             }

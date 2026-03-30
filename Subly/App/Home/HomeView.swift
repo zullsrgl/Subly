@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     @State private var selectedTab = 0
     @Binding var activeSheet: Sheet?
+    @Binding var path: NavigationPath
     
     let columns = [
         GridItem(.flexible(), spacing: 24),
@@ -91,21 +92,22 @@ struct HomeView: View {
         .navigationTitle("Potfolio")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
-            
             ToolbarItem(placement: .navigationBarTrailing) {
-                Image(systemName: "bell.fill")
-                    .resizable()
-                    .scaledToFill()
-                    .padding(.all, 2)
-                    .frame(width: 30, height: 30)
-                    .clipShape(Circle())
-                    .foregroundStyle(Color(uiColor: Colors.secondary500))
-                
+                Button {
+                    path.append(Route.notifications)
+                } label: {
+                    Image(systemName: "bell.fill")
+                        .resizable()
+                        .padding(.all, 2)
+                        .scaledToFill()
+                        .frame(width: 30, height: 30)
+                        .foregroundStyle(Color(uiColor: Colors.secondary500))
+                }
             }
         }
     }
 }
 
 #Preview {
-    HomeView(activeSheet: .constant(nil))
+    HomeView(activeSheet: .constant(nil), path: .constant(NavigationPath()))
 }
