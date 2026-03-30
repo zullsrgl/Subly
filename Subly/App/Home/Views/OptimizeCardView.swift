@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct OptimizeCardView: View {
+    let onClicedBottomSheet: () -> Void
     var body: some View {
         ZStack(alignment: .bottomTrailing){
             VStack(alignment: .leading, spacing: 12){
@@ -23,6 +24,7 @@ struct OptimizeCardView: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             
             Button {
+                onClicedBottomSheet()
                 
             } label: {
                 Image(systemName: "plus")
@@ -53,5 +55,5 @@ struct OptimizeCardView: View {
 }
 
 #Preview {
-    OptimizeCardView()
+    OptimizeCardView(onClicedBottomSheet: {})
 }

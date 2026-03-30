@@ -11,7 +11,8 @@ import SwiftUI
 struct SublyApp: App {
     var body: some Scene {
         WindowGroup {
-            RouteView()
+            MainTabView()
+                .preferredColorScheme(.dark)
         }
     }
 }

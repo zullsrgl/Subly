@@ -17,7 +17,7 @@ struct UpcomingPaymentsCardView: View {
                 
                 Image(systemName: "movieclapper.fill")
                     .font(.system(size: 20))
-                    .foregroundStyle(Color(uiColor: Colors.secondary600))
+                    .foregroundStyle(Color(uiColor: Colors.secondary500))
             }
             
             
@@ -28,7 +28,7 @@ struct UpcomingPaymentsCardView: View {
                 
                 Text("Sep 15")
                     .font(.system(size: 14))
-                    .foregroundStyle(Color(uiColor: Colors.secondary600))
+                    .foregroundStyle(Color(uiColor: Colors.secondary500))
             }
             
             Spacer()
@@ -40,7 +40,7 @@ struct UpcomingPaymentsCardView: View {
                 
                 Text("Premium")
                     .font(.system(size: 14))
-                    .foregroundStyle(Color(uiColor: Colors.secondary600))
+                    .foregroundStyle(Color(uiColor: Colors.secondary500))
             }
         }
         .padding()

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @State private var selectedTab = 0
+    @Binding var activeSheet: Sheet?
     
     let columns = [
         GridItem(.flexible(), spacing: 24),
@@ -45,7 +46,7 @@ struct HomeView: View {
                     
                     Text("3")
                         .font(.system(size: 32, weight: .bold))
-                        .foregroundStyle(Color(Colors.secondary600))
+                        .foregroundStyle(Color(Colors.secondary500))
                 }
                 .padding()
                 .frame(maxWidth: .infinity, minHeight: 100, alignment: .leading)
@@ -74,13 +75,15 @@ struct HomeView: View {
                     
                 }
             }
-            
             .padding(.horizontal, 8)
             
             UpcomingPaymentsCardView()
                 .padding(.bottom, 40)
             
-            OptimizeCardView()
+            OptimizeCardView(onClicedBottomSheet: {
+                activeSheet = .create
+                
+            })
         }
         .background(
             Color(Colors.black)
@@ -88,7 +91,7 @@ struct HomeView: View {
         .navigationTitle("Potfolio")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
-          
+            
             ToolbarItem(placement: .navigationBarTrailing) {
                 Image(systemName: "bell.fill")
                     .resizable()
@@ -104,5 +107,5 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView()
+    HomeView(activeSheet: .constant(nil))
 }
