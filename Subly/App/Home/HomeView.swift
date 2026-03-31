@@ -64,8 +64,10 @@ struct HomeView: View {
             
             HStack{
                 Text("Upcoming Payments")
-                    .foregroundStyle(Color(Colors.white))
-                    .font(.system(size: 24, weight: .semibold))
+                    .font(.system(size: 14, weight: .bold))
+                    .foregroundStyle(.gray.opacity(0.8))
+                    .padding(.leading, 4)
+
                 
                 Spacer()
                 Button {
@@ -73,6 +75,7 @@ struct HomeView: View {
                 }label: {
                     Text("See All")
                         .foregroundStyle(Color(Colors.secondary500))
+                        .font(.system(size: 14, weight: .bold))
                     
                 }
             }
