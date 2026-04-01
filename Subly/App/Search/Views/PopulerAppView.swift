@@ -52,12 +52,12 @@ struct PopulerAppView: View {
                 }
                 .padding(.all, 12)
                 .background(
-                    RoundedRectangle(cornerRadius: 20)
-                        .fill(Color(uiColor: Colors.gray800).opacity(0.3))
+                    RoundedRectangle(cornerRadius: 16)
+                        .fill(Color.white.opacity(0.04))
                 )
                 .overlay(
-                    RoundedRectangle(cornerRadius: 20)
-                        .stroke(Color.white.opacity(0.1), lineWidth: 1)
+                    RoundedRectangle(cornerRadius: 16)
+                        .stroke(Color.white.opacity(0.08), lineWidth: 1)
                 )
             }
         }

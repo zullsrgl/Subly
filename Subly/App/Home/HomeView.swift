@@ -33,12 +33,13 @@ struct HomeView: View {
                 .padding()
                 .frame(maxWidth: .infinity, minHeight: 100, alignment: .leading)
                 .background(
-                    RoundedRectangle(cornerRadius: 12)
-                        .fill(Color(Colors.gray200))
+                    RoundedRectangle(cornerRadius: 16)
+                        .fill(Color.white.opacity(0.04))
                 )
-                .overlay {
-                    RoundedRectangle(cornerRadius: 12).stroke(Color(Colors.gray300), lineWidth: 1)
-                }
+                .overlay(
+                    RoundedRectangle(cornerRadius: 16)
+                        .stroke(Color.white.opacity(0.08), lineWidth: 1)
+                )
                 
                 VStack(alignment: .leading, spacing: 8) {
                     Text("Due Soon")
@@ -52,12 +53,13 @@ struct HomeView: View {
                 .padding()
                 .frame(maxWidth: .infinity, minHeight: 100, alignment: .leading)
                 .background(
-                    RoundedRectangle(cornerRadius: 12)
-                        .fill(Color(Colors.gray200))
+                    RoundedRectangle(cornerRadius: 16)
+                        .fill(Color.white.opacity(0.04))
                 )
-                .overlay {
-                    RoundedRectangle(cornerRadius: 12).stroke(Color(Colors.gray300), lineWidth: 1)
-                }
+                .overlay(
+                    RoundedRectangle(cornerRadius: 16)
+                        .stroke(Color.white.opacity(0.08), lineWidth: 1)
+                )
             }
             .padding(.horizontal, 8)
             .padding(.bottom, 40)

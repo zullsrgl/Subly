@@ -40,11 +40,11 @@ struct PlanDetailView: View {
             .padding()
             .background(
                 RoundedRectangle(cornerRadius: 16)
-                    .fill(Color(Colors.gray200))
+                    .fill(Color.white.opacity(0.04))
             )
             .overlay(
                 RoundedRectangle(cornerRadius: 16)
-                    .stroke(Color(uiColor: Colors.gray300).opacity(0.5), lineWidth: 1)
+                    .stroke(Color.white.opacity(0.08), lineWidth: 1)
             )
             
             HStack {
@@ -74,11 +74,11 @@ struct PlanDetailView: View {
             .padding()
             .background(
                 RoundedRectangle(cornerRadius: 16)
-                    .fill(Color(Colors.gray200))
+                    .fill(Color.white.opacity(0.04))
             )
             .overlay(
                 RoundedRectangle(cornerRadius: 16)
-                    .stroke(Color(uiColor: Colors.gray300).opacity(0.5), lineWidth: 1)
+                    .stroke(Color.white.opacity(0.08), lineWidth: 1)
             )
             
             
@@ -106,14 +106,14 @@ struct PlanDetailView: View {
                     .foregroundStyle(Color(uiColor: Colors.secondary500))
                 }
             }
-            .padding()
+            .padding(.all, 12)
             .background(
                 RoundedRectangle(cornerRadius: 16)
-                    .fill(Color(Colors.gray200))
+                    .fill(Color.white.opacity(0.04))
             )
             .overlay(
                 RoundedRectangle(cornerRadius: 16)
-                    .stroke(Color(uiColor: Colors.gray300).opacity(0.5), lineWidth: 1)
+                    .stroke(Color.white.opacity(0.08), lineWidth: 1)
             )
             
         }

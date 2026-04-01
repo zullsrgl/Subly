@@ -10,6 +10,7 @@ enum Route: Hashable {
     case home
     case notifications
     case search
+    case analysis
 }
 
 enum Sheet: Identifiable {
@@ -21,6 +22,7 @@ enum Sheet: Identifiable {
 struct MainTabView: View {
     @State private var homePath = NavigationPath()
     @State private var searchPath = NavigationPath()
+    @State private var analysisPath = NavigationPath()
     
     @State private var selectedTab = 0
     @State private var activeSheet: Sheet?
@@ -52,6 +54,18 @@ struct MainTabView: View {
                 Image(systemName: "magnifyingglass")
             }
             .tag(1)
+            
+            NavigationStack(path: $analysisPath) {
+                AnalysisView()
+                    .navigationDestination(for: Route.self) { route in
+                        viewFactory(for: route)
+                    }
+            }
+            .tabItem {
+                Text("Analysis")
+                Image(systemName: "chart.pie")
+            }
+            .tag(2)
         }
         .tint(Color(uiColor: Colors.secondary500))
         .sheet(item: $activeSheet) { item in
@@ -68,6 +82,8 @@ struct MainTabView: View {
             SearchView()
         case .home:
             EmptyView()
+        case .analysis:
+            AnalysisView()
         }
     }
     @ViewBuilder

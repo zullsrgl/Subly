@@ -37,9 +37,15 @@ struct NotificationCard: View {
             }
             
         }
-        .padding()
-        .background(RoundedRectangle(cornerRadius: 16)
-            .fill(Color(Colors.gray500).opacity(0.5)))
+        .padding(.all, 12)
+        .background(
+            RoundedRectangle(cornerRadius: 16)
+                .fill(Color.white.opacity(0.04))
+        )
+        .overlay(
+            RoundedRectangle(cornerRadius: 16)
+                .stroke(Color.white.opacity(0.08), lineWidth: 1)
+        )
     }
 }
 
