@@ -87,7 +87,7 @@ struct HomeView: View {
                 .padding(.bottom, 40)
             
             OptimizeCardView(onClicedBottomSheet: {
-                activeSheet = .create
+                activeSheet = .services
                 
             })
         }

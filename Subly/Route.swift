@@ -9,20 +9,23 @@ import SwiftUI
 enum Route: Hashable {
     case home
     case notifications
-    case search
     case analysis
 }
 
 enum Sheet: Identifiable {
-    case create
+    case services
     var id: String { String(describing: self) }
-    
+}
+
+enum ServiceRoute: Hashable {
+    case create
 }
 
 struct MainTabView: View {
     @State private var homePath = NavigationPath()
     @State private var searchPath = NavigationPath()
     @State private var analysisPath = NavigationPath()
+    @State private var createPath = NavigationPath()
     
     @State private var selectedTab = 0
     @State private var activeSheet: Sheet?
@@ -43,18 +46,6 @@ struct MainTabView: View {
             }
             .tag(0)
             
-            NavigationStack(path: $searchPath) {
-                SearchView()
-                    .navigationDestination(for: Route.self) { route in
-                        viewFactory(for: route)
-                    }
-            }
-            .tabItem {
-                Text("Search")
-                Image(systemName: "magnifyingglass")
-            }
-            .tag(1)
-            
             NavigationStack(path: $analysisPath) {
                 AnalysisView()
                     .navigationDestination(for: Route.self) { route in
@@ -65,7 +56,7 @@ struct MainTabView: View {
                 Text("Analysis")
                 Image(systemName: "chart.pie")
             }
-            .tag(2)
+            .tag(1)
         }
         .tint(Color(uiColor: Colors.secondary500))
         .sheet(item: $activeSheet) { item in
@@ -78,8 +69,6 @@ struct MainTabView: View {
         switch route {
         case .notifications:
             NotificationView()
-        case .search:
-            SearchView()
         case .home:
             EmptyView()
         case .analysis:
@@ -89,9 +78,15 @@ struct MainTabView: View {
     @ViewBuilder
     func sheetFactory(for item: Sheet) -> some View {
         switch item {
-        case .create:
-            NavigationStack {
-                CreateView()
+        case .services:
+            NavigationStack(path: $createPath){
+                ServicesView(path: $createPath)
+                    .navigationDestination(for: ServiceRoute.self) { route in
+                        switch route {
+                        case .create:
+                            CreateView()
+                        }
+                    }
             }
         }
     }

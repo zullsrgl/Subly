@@ -19,7 +19,7 @@ struct CreateView: View {
             }
             .padding(.horizontal)
             .scrollDismissesKeyboard(.interactively)
-            .navigationTitle("New Subscription")
+            .navigationTitle("New Plans")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
@@ -28,15 +28,6 @@ struct CreateView: View {
                     }
                     .foregroundStyle(Color(uiColor: Colors.secondary500))
                     .fontWeight(.bold)
-                }
-                
-                ToolbarItem(placement: .topBarLeading) {
-                    Button {
-                        dismiss()
-                    } label: {
-                        Image(systemName: "xmark")
-                            .foregroundStyle(.gray)
-                    }
                 }
             }
         }
