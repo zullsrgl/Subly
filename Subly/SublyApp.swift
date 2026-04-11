@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct SublyApp: App {
@@ -14,5 +15,6 @@ struct SublyApp: App {
             MainTabView()
                 .preferredColorScheme(.dark)
         }
+        .modelContainer(for: ServicesModel.self)
     }
 }

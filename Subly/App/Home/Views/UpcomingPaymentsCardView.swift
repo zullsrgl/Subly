@@ -8,54 +8,58 @@
 import SwiftUI
 
 struct UpcomingPaymentsCardView: View {
+    var services: [ServicesModel]
     var body: some View {
-        HStack(spacing: 16) {
-            ZStack {
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(Color(uiColor: Colors.gray500).opacity(0.2))
-                    .frame(width: 45, height: 45)
+        VStack {
+            ForEach(services.prefix(3)){ service in
                 
-                Image(systemName: "movieclapper.fill")
-                    .font(.system(size: 20))
-                    .foregroundStyle(Color(uiColor: Colors.secondary500))
-            }
-            
-            
-            VStack(alignment: .leading, spacing: 4) {
-                Text("Netflix")
-                    .font(.system(size: 16, weight: .bold))
-                    .foregroundStyle(.white)
-                
-                Text("Sep 15")
-                    .font(.system(size: 14))
-                    .foregroundStyle(Color(uiColor: Colors.secondary500))
-            }
-            
-            Spacer()
-            
-            VStack(alignment: .trailing, spacing: 4) {
-                Text("$10.49")
-                    .font(.system(size: 16, weight: .bold))
-                    .foregroundStyle(.white)
-                
-                Text("Premium")
-                    .font(.system(size: 14))
-                    .foregroundStyle(Color(uiColor: Colors.secondary500))
+                HStack(spacing: 16) {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(Color(uiColor: Colors.gray500).opacity(0.2))
+                            .frame(width: 45, height: 45)
+                        
+                        Image(systemName: "movieclapper.fill")
+                            .font(.system(size: 20))
+                            .foregroundStyle(Color(uiColor: Colors.secondary500))
+                    }
+                    
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(service.name ?? "?")
+                            .font(.system(size: 16, weight: .bold))
+                            .foregroundStyle(.white)
+                        
+                        Text(service.date?.formatted(date: .abbreviated, time: .omitted) ?? "?")
+                            .font(.system(size: 14))
+                            .foregroundStyle(Color(uiColor: Colors.secondary500))
+                    }
+                    
+                    Spacer()
+                    
+                    VStack(alignment: .trailing, spacing: 4) {
+                        Text("\(String(format: "%.2f", service.price ?? 0.0)) \(service.current ?? "$")")
+                            .font(.system(size: 16, weight: .bold))
+                            .foregroundStyle(.white)
+                        Text("Premium")
+                            .font(.system(size: 14))
+                            .foregroundStyle(Color(uiColor: Colors.secondary500))
+                    }
+                }
+                .padding(.all, 12)
+                .background(
+                    RoundedRectangle(cornerRadius: 16)
+                        .fill(Color.white.opacity(0.04))
+                )
+                .overlay(
+                    RoundedRectangle(cornerRadius: 16)
+                        .stroke(Color.white.opacity(0.08), lineWidth: 1)
+                )
+                .padding(.horizontal, 8)
             }
         }
-        .padding(.all, 12)
-        .background(
-            RoundedRectangle(cornerRadius: 16)
-                .fill(Color.white.opacity(0.04))
-        )
-        .overlay(
-            RoundedRectangle(cornerRadius: 16)
-                .stroke(Color.white.opacity(0.08), lineWidth: 1)
-        )
-        .padding(.horizontal, 8)
     }
 }
 
 #Preview {
-    UpcomingPaymentsCardView()
+    UpcomingPaymentsCardView(services: [])
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AlertView: View {
-    @State private var remindMe: Bool = true
+    @Binding var isReminderEnabled: Bool
     
     var body: some View {
         VStack(alignment: .leading){
@@ -32,7 +32,7 @@ struct AlertView: View {
                 }
                 Spacer()
                 
-                Toggle("", isOn: $remindMe)
+                Toggle("", isOn: $isReminderEnabled)
                     .labelsHidden()
                     .tint(Color(uiColor: Colors.secondary500))
             }
@@ -49,5 +49,5 @@ struct AlertView: View {
     }
 }
 #Preview {
-    AlertView()
+    AlertView(isReminderEnabled: .constant(true))
 }

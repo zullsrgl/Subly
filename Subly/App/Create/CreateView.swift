@@ -9,13 +9,17 @@ import SwiftUI
 
 struct CreateView: View {
     @Environment(\.dismiss) var dismiss
+    @Environment(\.modelContext) private var modelContext
+    
+    @StateObject private var viewModel = CreateViewModel()
+   
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 40){
-                IdentityView()
-                PlanDetailView()
-                TimelineView()
-                AlertView()
+                IdentityView(servicesName: $viewModel.servicesName)
+                PlanDetailView(servicesPayment: $viewModel.servicesPayment, selectedCurrency: $viewModel.selectedCurrency, selectedCycle: $viewModel.selectedCycle)
+                TimelineView(nextPaymentDate: $viewModel.nextPaymentDate)
+                AlertView(isReminderEnabled: $viewModel.isReminderEnabled)
             }
             .padding(.horizontal)
             .scrollDismissesKeyboard(.interactively)
@@ -24,10 +28,12 @@ struct CreateView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Done") {
+                        viewModel.saveNewServices(context: modelContext)
                         dismiss()
                     }
                     .foregroundStyle(Color(uiColor: Colors.secondary500))
                     .fontWeight(.bold)
+                    .disabled(viewModel.servicesName.isEmpty || viewModel.servicesPayment.isEmpty)
                 }
             }
         }

@@ -6,11 +6,14 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct HomeView: View {
-    @State private var selectedTab = 0
     @Binding var activeSheet: Sheet?
     @Binding var path: NavigationPath
+    @StateObject private var viewModel = HomeViewModel()
+    @Environment(\.modelContext) private var modelContext
+    @Query(sort: \ServicesModel.name) var services: [ServicesModel]
     
     let columns = [
         GridItem(.flexible(), spacing: 24),
@@ -69,8 +72,6 @@ struct HomeView: View {
                     .font(.system(size: 14, weight: .bold))
                     .foregroundStyle(.gray.opacity(0.8))
                     .padding(.leading, 4)
-
-                
                 Spacer()
                 Button {
                     
@@ -83,7 +84,7 @@ struct HomeView: View {
             }
             .padding(.horizontal, 8)
             
-            UpcomingPaymentsCardView()
+            UpcomingPaymentsCardView(services: services)
                 .padding(.bottom, 40)
             
             OptimizeCardView(onClicedBottomSheet: {

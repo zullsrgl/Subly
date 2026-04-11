@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct PlanDetailView: View {
-    @State private var subscriptionPayment: String = ""
-    @State private var selectedCurrency: String = "$"
-    @State private var selectedCycle: String = "Monthly"
+    @Binding var servicesPayment: String
+    @Binding var selectedCurrency: String
+    @Binding var selectedCycle: String
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -26,7 +26,7 @@ struct PlanDetailView: View {
                     Text(selectedCurrency)
                         .foregroundStyle(Color(Colors.secondary500))
                         .font(.system(size: 16, weight: .bold))
-                    TextField("0.00", text: $subscriptionPayment, prompt:
+                    TextField("0.00", text: $servicesPayment, prompt:
                                 Text("0.00")
                         .foregroundStyle(Color(Colors.gray300))
                         .font(.system(size: 16, weight: .semibold))
@@ -121,5 +121,5 @@ struct PlanDetailView: View {
 }
 
 #Preview {
-    PlanDetailView()
+    PlanDetailView(servicesPayment: .constant("Text"), selectedCurrency: .constant("$"), selectedCycle: .constant("Yearly"))
 }

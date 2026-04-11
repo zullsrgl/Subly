@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TimelineView: View {
-    @State private var nextPaymentDate = Date()
+    @Binding var nextPaymentDate: Date
     @State private var isPickerExpanded = false
     
     var body: some View {
@@ -72,5 +72,5 @@ struct TimelineView: View {
 }
 
 #Preview {
-    TimelineView()
+    TimelineView(nextPaymentDate: .constant(Date()))
 }

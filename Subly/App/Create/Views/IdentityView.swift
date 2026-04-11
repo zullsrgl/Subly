@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct IdentityView: View {
-    @State private var subscriptionName: String = ""
+    @Binding var servicesName: String
     var body: some View {
         VStack(alignment: .leading){
             Text("IDENTITY")
@@ -27,7 +27,7 @@ struct IdentityView: View {
                 }
                 
                 VStack(alignment: .leading, spacing: 4) {
-                    TextField("", text: $subscriptionName, prompt:
+                    TextField("", text: $servicesName, prompt:
                                 Text("Name your subscription")
                         .foregroundStyle(Color(Colors.gray300))
                         .font(.system(size: 16, weight: .semibold))
@@ -55,5 +55,5 @@ struct IdentityView: View {
 }
 
 #Preview {
-    IdentityView()
+    IdentityView(servicesName: .constant("Text"))
 }
