@@ -11,7 +11,7 @@ struct UpcomingPaymentsCardView: View {
     var services: [ServicesModel]
     var body: some View {
         VStack {
-            ForEach(services.prefix(3)){ service in
+            ForEach(services){ service in
                 
                 HStack(spacing: 16) {
                     ZStack {

@@ -50,7 +50,7 @@ struct OptimizeCardView: View {
                 .frame(height: 160)
                 .clipShape(RoundedRectangle(cornerRadius: 12))
         )
-        .padding(.horizontal)
+        .padding(.horizontal, 8)
     }
 }
 

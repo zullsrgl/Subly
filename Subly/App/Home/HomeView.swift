@@ -22,7 +22,7 @@ struct HomeView: View {
     
     var body: some View {
         ScrollView {
-            SpendingCardView()
+            SpendingCardView(services: services)
             LazyVGrid(columns: columns) {
                 VStack(alignment: .leading, spacing: 8) {
                     Text("Active Plans")
@@ -65,32 +65,25 @@ struct HomeView: View {
                 )
             }
             .padding(.horizontal, 8)
-            .padding(.bottom, 40)
+            .padding(.bottom, 20)
             
-            HStack{
-                Text("Upcoming Payments")
-                    .font(.system(size: 14, weight: .bold))
-                    .foregroundStyle(.gray.opacity(0.8))
-                    .padding(.leading, 4)
-                Spacer()
-                Button {
-                    
-                }label: {
-                    Text("See All")
-                        .foregroundStyle(Color(Colors.secondary500))
-                        .font(.system(size: 14, weight: .bold))
-                    
-                }
-            }
-            .padding(.horizontal, 8)
-            
-            UpcomingPaymentsCardView(services: services)
-                .padding(.bottom, 40)
-                            
             OptimizeCardView(onClicedBottomSheet: {
                 activeSheet = .services
                 
             })
+            .padding(.bottom, 20)
+            
+            if !services.isEmpty {
+                Text("Upcoming Payments")
+                    .font(.system(size: 14, weight: .bold))
+                    .foregroundStyle(.gray.opacity(0.8))
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal, 8)
+            }
+            
+            UpcomingPaymentsCardView(services: services)
+                .padding(.bottom, 20)
+            
         }
         .background(
             Color(Colors.black)
