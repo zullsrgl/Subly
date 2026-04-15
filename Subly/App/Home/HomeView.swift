@@ -29,7 +29,7 @@ struct HomeView: View {
                         .font(.system(size: 16, weight: .medium))
                         .foregroundStyle(Color(Colors.gray800))
                     
-                    Text("12")
+                    Text("\(services.count)")
                         .font(.system(size: 32, weight: .bold))
                         .foregroundStyle(Color(Colors.white))
                 }
@@ -86,7 +86,7 @@ struct HomeView: View {
             
             UpcomingPaymentsCardView(services: services)
                 .padding(.bottom, 40)
-            
+                            
             OptimizeCardView(onClicedBottomSheet: {
                 activeSheet = .services
                 

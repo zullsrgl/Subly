@@ -12,7 +12,7 @@ struct CreateView: View {
     @Environment(\.modelContext) private var modelContext
     
     @StateObject private var viewModel = CreateViewModel()
-   
+    
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 40){
@@ -28,14 +28,18 @@ struct CreateView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Done") {
-                        viewModel.saveNewServices(context: modelContext)
-                        dismiss()
+                        if viewModel.validateAndSave(context: modelContext) {
+                            dismiss()
+                        }
                     }
+                    
                     .foregroundStyle(Color(uiColor: Colors.secondary500))
                     .fontWeight(.bold)
-                    .disabled(viewModel.servicesName.isEmpty || viewModel.servicesPayment.isEmpty)
                 }
             }
+        }
+        .alert(item: $viewModel.activeAlert) { type in
+            AlertFactory.build(for: type)
         }
     }
 }
