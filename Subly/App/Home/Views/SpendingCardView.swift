@@ -12,20 +12,41 @@ struct SpendingCardView: View {
     let currencies = ["₺","$", "€"]
     @State private var currentIndex = 0
     
-    var totalSpending: Double {
-            services.reduce(0.0) { $0 + ($1.price ?? 0.0) }
+    var totalSpendingInTRY: Double {
+        services.reduce(0.0) { total, service in
+            let price = service.price ?? 0.0
+            
+            let priceInTRY: Double
+            switch service.current {
+            case "$": priceInTRY = price * 44.75
+            case "€": priceInTRY = price * 52.82
+            default:  priceInTRY = price
+            }
+           
+            let monthlyPrice: Double
+            switch service.priceCycle{
+            case "Weekly":
+                monthlyPrice = priceInTRY * 4
+            case "Yearly":
+                monthlyPrice = priceInTRY / 12
+            default:
+                monthlyPrice = priceInTRY
+            }
+            
+            return total + monthlyPrice
         }
+    }
     
     private var displayedAmount: Double {
-            switch currentIndex {
-            case 1:
-                return totalSpending / 44.75
-            case 2:
-                return totalSpending / 52.82
-            default:
-                return totalSpending
-            }
+        switch currentIndex {
+        case 1:
+            return totalSpendingInTRY / 44.75
+        case 2:
+            return totalSpendingInTRY / 52.82
+        default:
+            return totalSpendingInTRY
         }
+    }
     
     var body: some View {
         VStack{

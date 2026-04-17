@@ -20,6 +20,10 @@ struct HomeView: View {
         GridItem(.flexible(), spacing: 24)
     ]
     
+    var dueSoonCount: Int {
+        services.filter { $0.daysLeft <= 7 }.count
+    }
+    
     var body: some View {
         ScrollView {
             SpendingCardView(services: services)
@@ -49,7 +53,7 @@ struct HomeView: View {
                         .font(.system(size: 16, weight: .medium))
                         .foregroundStyle(Color(Colors.gray800))
                     
-                    Text("3")
+                    Text("\(dueSoonCount)")
                         .font(.system(size: 32, weight: .bold))
                         .foregroundStyle(Color(Colors.secondary500))
                 }

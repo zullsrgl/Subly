@@ -20,6 +20,7 @@ final class CreateViewModel: ObservableObject{
     private func saveNewServices(context: ModelContext){
         let cleanedPayment = servicesPayment.replacingOccurrences(of: ",", with: ".")
         let priceValue = Double(cleanedPayment) ?? 0.0
+        
         let newServices = ServicesModel(
             id: UUID(),
             name: servicesName,

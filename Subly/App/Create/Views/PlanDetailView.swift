@@ -93,7 +93,7 @@ struct PlanDetailView: View {
                     .font(.system(size: 16, weight: .semibold))
                 Spacer()
                 Menu{
-                    Button("Weakly") { selectedCycle = "Weakly" }
+                    Button("Weekly") { selectedCycle = "Weekly" }
                     Button("Monthly") { selectedCycle = "Monthly" }
                     Button("Yearly") { selectedCycle = "Yearly" }
                 } label: {

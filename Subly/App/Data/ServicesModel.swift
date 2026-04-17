@@ -31,3 +31,28 @@ class ServicesModel {
     }
     
 }
+
+
+extension ServicesModel {
+    var nextPaymentDate: Date {
+        guard let startDate = self.date else { return Date() }
+        let calendar = Calendar.current
+        let today = calendar.startOfDay(for: Date())
+        var nextDate = calendar.startOfDay(for: startDate)
+        
+        while nextDate < today {
+            if let updatedDate = calendar.date(byAdding: .month, value: 1, to: nextDate) {
+                nextDate = updatedDate
+            } else { break }
+        }
+        return nextDate
+    }
+    
+    var daysLeft: Int {
+        let calendar = Calendar.current
+        let today = calendar.startOfDay(for: Date())
+        let target = calendar.startOfDay(for: self.nextPaymentDate)
+        
+        return calendar.dateComponents([.day], from: today, to: target).day ?? 0
+    }
+}

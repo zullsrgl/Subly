@@ -11,8 +11,7 @@ struct UpcomingPaymentsCardView: View {
     var services: [ServicesModel]
     var body: some View {
         VStack {
-            ForEach(services){ service in
-                
+            ForEach(services.filter { $0.daysLeft <= 7 }) { service in
                 HStack(spacing: 16) {
                     ZStack {
                         RoundedRectangle(cornerRadius: 10)
@@ -29,7 +28,7 @@ struct UpcomingPaymentsCardView: View {
                             .font(.system(size: 16, weight: .bold))
                             .foregroundStyle(.white)
                         
-                        Text(service.date?.formatted(date: .abbreviated, time: .omitted) ?? "?")
+                        Text(service.nextPaymentDate.formatted(date: .abbreviated, time: .omitted))
                             .font(.system(size: 14))
                             .foregroundStyle(Color(uiColor: Colors.secondary500))
                     }
@@ -40,9 +39,16 @@ struct UpcomingPaymentsCardView: View {
                         Text("\(String(format: "%.2f", service.price ?? 0.0)) \(service.current ?? "$")")
                             .font(.system(size: 16, weight: .bold))
                             .foregroundStyle(.white)
-                        Text("Premium")
-                            .font(.system(size: 14))
-                            .foregroundStyle(Color(uiColor: Colors.secondary500))
+                        HStack{
+                            Circle()
+                                .fill(Color(Colors.primary500))
+                                .frame(width: 5, height: 5)
+                            
+                            Text(service.daysLeft == 0 ? "Today" : "\(service.daysLeft) days left")
+                                .font(.system(size: 14))
+                                .foregroundStyle(service.daysLeft == 0 ? .orange : Color(uiColor: Colors.secondary500))
+                        }
+                        
                     }
                 }
                 .padding(.all, 12)
@@ -57,6 +63,7 @@ struct UpcomingPaymentsCardView: View {
                 .padding(.horizontal, 8)
             }
         }
+        
     }
 }
 
