@@ -10,9 +10,10 @@ import Foundation
 import SwiftData
 
 class ServicesManager{
-    
     static let shared = ServicesManager()
-    private init() {}
+    var defaultServices: [DefaultServices] = []
+    
+    private init() { }
     
     func saveNewServices(services: ServicesModel, context: ModelContext){
         context.insert(services)
@@ -23,5 +24,25 @@ class ServicesManager{
             print("Error: Servis Manager services model not saved")
         }
         
+    }
+    
+    func loadJSON() -> [DefaultServices] {
+        guard let url = Bundle.main.url(forResource: "DefaultsServices", withExtension: "json") else {
+            print("Not found json file.")
+            return []
+        }
+        
+        do {
+            let data = try Data(contentsOf: url)
+            let decodedData = try JSONDecoder().decode(ServiceResponse.self, from: data)
+
+            self.defaultServices = decodedData.services
+            
+            return decodedData.services
+            
+        } catch {
+            print("Parse Error: \(error)")
+            return []
+        }
     }
 }

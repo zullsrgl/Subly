@@ -56,3 +56,16 @@ extension ServicesModel {
         return calendar.dateComponents([.day], from: today, to: target).day ?? 0
     }
 }
+
+struct DefaultServices: Decodable, Identifiable {
+    var id: String?
+    var name: String?
+    var category: String?
+    var pathURL: String?
+    var color: String?
+}
+
+
+struct ServiceResponse: Decodable {
+    let services: [DefaultServices]
+}

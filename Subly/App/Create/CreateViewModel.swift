@@ -17,6 +17,9 @@ final class CreateViewModel: ObservableObject{
     @Published var nextPaymentDate: Date = Date()
     @Published var isReminderEnabled: Bool = false
     
+    @Published var selectedServiceName: String?
+    @Published var selectedServicepath: String?
+    
     private func saveNewServices(context: ModelContext){
         let cleanedPayment = servicesPayment.replacingOccurrences(of: ",", with: ".")
         let priceValue = Double(cleanedPayment) ?? 0.0
@@ -24,7 +27,7 @@ final class CreateViewModel: ObservableObject{
         let newServices = ServicesModel(
             id: UUID(),
             name: servicesName,
-            path: "",
+            path: selectedServicepath ?? "",
             price: priceValue,
             current: selectedCurrency,
             priceCycle: selectedCycle,
@@ -56,6 +59,17 @@ final class CreateViewModel: ObservableObject{
         }
         saveNewServices(context: context)
         return true
+    }
+    
+    func getSelectedService(serviceID: String) {
+        guard !serviceID.isEmpty else { return }
+        
+        if let service = ServicesManager.shared.defaultServices.first(where: { $0.id == serviceID }) {
+            let name = service.name ?? ""
+            self.selectedServicepath = service.pathURL ?? ""
+            self.selectedServiceName = name
+            self.servicesName = name
+        }
     }
 }
 

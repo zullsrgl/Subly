@@ -9,6 +9,10 @@ import SwiftUI
 
 struct IdentityView: View {
     @Binding var servicesName: String
+    
+    @Binding var selectedServiceName: String?
+    @Binding var selectedServicePath: String?
+    
     var body: some View {
         VStack(alignment: .leading){
             Text("IDENTITY")
@@ -21,19 +25,43 @@ struct IdentityView: View {
                         .fill(Color(uiColor: Colors.gray500).opacity(0.2))
                         .frame(width: 45, height: 45)
                     
-                    Image(systemName: "movieclapper.fill")
-                        .font(.system(size: 20))
-                        .foregroundStyle(Color(uiColor: Colors.secondary500))
+                    if let path = selectedServicePath, !path.isEmpty, let url = URL(string: path) {
+                        AsyncImage(url: url) { phase in
+                            switch phase {
+                            case .success(let image):
+                                image
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 32, height: 32)
+                                    .clipShape(RoundedRectangle(cornerRadius: 8))
+                            case .failure(_):
+                                Image(systemName: "app.badge.fill")
+                                    .foregroundStyle(.gray)
+                            case .empty:
+                                ProgressView() // Yüklenirken
+                                    .scaleEffect(0.8)
+                            @unknown default:
+                                EmptyView()
+                            }
+                        }
+                        .id(path)
+                    } else {
+                        Image(systemName: "app.badge.fill")
+                            .foregroundStyle(.gray)
+                            .frame(width: 32, height: 32)
+                    }
                 }
                 
                 VStack(alignment: .leading, spacing: 4) {
+                    
                     TextField("", text: $servicesName, prompt:
-                                Text("Name your subscription")
-                        .foregroundStyle(Color(Colors.gray300))
-                        .font(.system(size: 16, weight: .semibold))
+                        Text("Enter the Service Name")
+                            .foregroundStyle(Color(Colors.gray300))
+                            .font(.system(size: 16, weight: .semibold))
                     )
                     .font(.system(size: 24, weight: .bold))
                     .foregroundStyle(Color(Colors.white))
+                    
                     Divider()
                         .background(Color(uiColor: Colors.gray400).opacity(0.3))
                         .padding(.horizontal)
@@ -55,5 +83,5 @@ struct IdentityView: View {
 }
 
 #Preview {
-    IdentityView(servicesName: .constant("Text"))
+    IdentityView(servicesName: .constant(""), selectedServiceName: .constant(""), selectedServicePath: .constant(""))
 }

@@ -12,13 +12,13 @@ enum Route: Hashable {
     case analysis
 }
 
+enum ServiceRoute: Hashable {
+    case create(serviceID: String)
+}
+
 enum Sheet: Identifiable {
     case services
     var id: String { String(describing: self) }
-}
-
-enum ServiceRoute: Hashable {
-    case create
 }
 
 struct MainTabView: View {
@@ -32,7 +32,6 @@ struct MainTabView: View {
     
     var body: some View {
         TabView(selection: $selectedTab) {
-            
             NavigationStack(path: $homePath) {
                 HomeView(activeSheet: $activeSheet, path: $homePath)
                     .navigationDestination(for: Route.self) { route in
@@ -83,8 +82,8 @@ struct MainTabView: View {
                 ServicesView(path: $createPath)
                     .navigationDestination(for: ServiceRoute.self) { route in
                         switch route {
-                        case .create:
-                            CreateView()
+                        case .create(let id):
+                            CreateView(serviceID: id)
                         }
                     }
             }

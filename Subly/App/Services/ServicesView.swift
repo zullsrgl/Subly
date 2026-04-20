@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ServicesView: View {
-    @State private var searchText: String = ""
     @Binding var path: NavigationPath
+    @StateObject private var viewModel = ServicesViewModel()
     
     var body: some View {
         ScrollView {
@@ -19,25 +19,42 @@ struct ServicesView: View {
                     .foregroundStyle(.gray.opacity(0.8))
                     .padding(.leading, 4)
                 
-                ForEach(0..<50, id: \.self){ index in
+                ForEach(viewModel.filteredServices) { service in
                     HStack(spacing: 15) {
-                        
                         ZStack {
                             RoundedRectangle(cornerRadius: 12)
                                 .fill(Color(uiColor: Colors.secondary500).opacity(0.15))
                                 .frame(width: 52, height: 52)
                             
-                            Image(systemName: "movieclapper.fill")
-                                .font(.system(size: 22))
-                                .foregroundStyle(Color(uiColor: Colors.secondary500))
+                            AsyncImage(url: URL(string: service.pathURL ?? "")) { phase in
+                                switch phase {
+                                case .success(let image):
+                                    image
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 32, height: 32)
+                                        .clipShape(RoundedRectangle(cornerRadius: 8))
+                                    
+                                case .failure(_):
+                                    Image(systemName: "app.badge.fill")
+                                        .foregroundStyle(.gray)
+                                    
+                                case .empty:
+                                    ProgressView()
+                                        .scaleEffect(0.8)
+                                    
+                                @unknown default:
+                                    EmptyView()
+                                }
+                            }
                         }
                         
                         VStack(alignment: .leading, spacing: 4) {
-                            Text("Netflix")
+                            Text(service.name ?? "Unknown Plan")
                                 .font(.system(size: 17, weight: .semibold))
                                 .foregroundStyle(.white)
                             
-                            Text("Streaming")
+                            Text(service.category ?? "General")
                                 .font(.system(size: 13))
                                 .foregroundStyle(Color(uiColor: Colors.secondary500).opacity(0.8))
                         }
@@ -45,6 +62,11 @@ struct ServicesView: View {
                         Spacer()
                         
                         Button {
+                            guard let id = service.id else {
+                                print("ServicesView Error: services not found")
+                                    return
+                            }
+                            path.append(ServiceRoute.create(serviceID: id))
                         } label: {
                             Image(systemName: "chevron.right")
                                 .font(.system(size: 18, weight: .bold))
@@ -67,19 +89,22 @@ struct ServicesView: View {
             }
         }
         .padding(.horizontal)
-        .searchable(text: $searchText, prompt: "Search Plans")
+        .searchable(text: $viewModel.searchText, prompt: "Search Plans")
         .navigationTitle("Search")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
-                    path.append(ServiceRoute.create)
+                    path.append(ServiceRoute.create(serviceID: ""))
                     
                 } label: {
                     Text("Manuel Add")
                         .foregroundStyle(Color(uiColor: Colors.secondary500))
                 }
             }
+        }
+        .onAppear{
+            viewModel.getJson()
         }
         
     }

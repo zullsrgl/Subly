@@ -1,0 +1,704 @@
+{
+  "services": [
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440001",
+      "name": "Netflix",
+      "category": "Stream",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=netflix.com",
+      "color": "#E50914"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440002",
+      "name": "Spotify",
+      "category": "Music",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=spotify.com",
+      "color": "#1DB954"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440003",
+      "name": "YouTube Premium",
+      "category": "Stream",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=youtube.com",
+      "color": "#FF0000"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440004",
+      "name": "Amazon Prime",
+      "category": "Shopping",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=amazon.com",
+      "color": "#00A8E1"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440005",
+      "name": "Disney+",
+      "category": "Stream",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=disneyplus.com",
+      "color": "#113CCF"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440006",
+      "name": "BluTV",
+      "category": "Stream",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=blutv.com.tr",
+      "color": "#00CCFF"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440007",
+      "name": "Exxen",
+      "category": "Stream",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=exxen.com",
+      "color": "#FDE047"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440008",
+      "name": "Tod TV",
+      "category": "Stream",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=todtv.com.tr",
+      "color": "#6A2BC3"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440009",
+      "name": "MUBI",
+      "category": "Stream",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=mubi.com",
+      "color": "#0000D5"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440010",
+      "name": "Canva",
+      "category": "Design",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=canva.com",
+      "color": "#00C4CC"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440011",
+      "name": "Adobe Creative Cloud",
+      "category": "Design",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=adobe.com",
+      "color": "#FF0000"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440012",
+      "name": "Midjourney",
+      "category": "AI",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=midjourney.com",
+      "color": "#FFFFFF"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440013",
+      "name": "Duolingo Plus",
+      "category": "Education",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=duolingo.com",
+      "color": "#58CC02"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440014",
+      "name": "Xbox Game Pass",
+      "category": "Gaming",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=xbox.com",
+      "color": "#107C10"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440015",
+      "name": "PlayStation Plus",
+      "category": "Gaming",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=playstation.com",
+      "color": "#003791"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440016",
+      "name": "Steam",
+      "category": "Gaming",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=steampowered.com",
+      "color": "#000000"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440017",
+      "name": "Discord Nitro",
+      "category": "Social",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=discord.com",
+      "color": "#5865F2"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440018",
+      "name": "Telegram Premium",
+      "category": "Social",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=telegram.org",
+      "color": "#24A1DE"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440019",
+      "name": "X Premium",
+      "category": "Social",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=x.com",
+      "color": "#000000"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440020",
+      "name": "LinkedIn Premium",
+      "category": "Business",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=linkedin.com",
+      "color": "#0A66C2"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440021",
+      "name": "Storytel",
+      "category": "Books",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=storytel.com",
+      "color": "#FF6341"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440022",
+      "name": "Audible",
+      "category": "Books",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=audible.com",
+      "color": "#F1C40F"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440023",
+      "name": "Notion",
+      "category": "Productivity",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=notion.so",
+      "color": "#000000"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440024",
+      "name": "GitHub Copilot",
+      "category": "Development",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=github.com",
+      "color": "#181717"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440025",
+      "name": "Figma",
+      "category": "Design",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=figma.com",
+      "color": "#F24E1E"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440026",
+      "name": "ChatGPT Plus",
+      "category": "AI",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=openai.com",
+      "color": "#10A37F"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440027",
+      "name": "Claude Pro",
+      "category": "AI",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=anthropic.com",
+      "color": "#D97757"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440028",
+      "name": "Coursera Plus",
+      "category": "Education",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=coursera.org",
+      "color": "#0056D2"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440029",
+      "name": "MasterClass",
+      "category": "Education",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=masterclass.com",
+      "color": "#000000"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440030",
+      "name": "Skillshare",
+      "category": "Education",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=skillshare.com",
+      "color": "#00FF84"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440031",
+      "name": "Nintendo Switch Online",
+      "category": "Gaming",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=nintendo.com",
+      "color": "#E60012"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440032",
+      "name": "Apple Music",
+      "category": "Music",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=apple.com",
+      "color": "#FA243C"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440033",
+      "name": "Tidal",
+      "category": "Music",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=tidal.com",
+      "color": "#000000"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440034",
+      "name": "Deezer",
+      "category": "Music",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=deezer.com",
+      "color": "#A238FF"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440035",
+      "name": "SoundCloud Go+",
+      "category": "Music",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=soundcloud.com",
+      "color": "#FF5500"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440036",
+      "name": "Hulu",
+      "category": "Stream",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=hulu.com",
+      "color": "#1CE679"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440037",
+      "name": "Paramount+",
+      "category": "Stream",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=paramountplus.com",
+      "color": "#0064FF"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440038",
+      "name": "Apple TV+",
+      "category": "Stream",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=tv.apple.com",
+      "color": "#000000"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440039",
+      "name": "HBO Max",
+      "category": "Stream",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=max.com",
+      "color": "#002BE7"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440040",
+      "name": "Peacock",
+      "category": "Stream",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=peacocktv.com",
+      "color": "#000000"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440041",
+      "name": "Crunchyroll",
+      "category": "Stream",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=crunchyroll.com",
+      "color": "#F47521"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440042",
+      "name": "Evernote",
+      "category": "Productivity",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=evernote.com",
+      "color": "#00A82D"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440043",
+      "name": "Todoist",
+      "category": "Productivity",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=todoist.com",
+      "color": "#E44232"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440044",
+      "name": "Grammarly",
+      "category": "Productivity",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=grammarly.com",
+      "color": "#15C39A"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440045",
+      "name": "Slack",
+      "category": "Business",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=slack.com",
+      "color": "#4A154B"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440046",
+      "name": "Zoom",
+      "category": "Business",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=zoom.us",
+      "color": "#2D8CFF"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440047",
+      "name": "Microsoft 365",
+      "category": "Business",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=microsoft.com",
+      "color": "#D83B01"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440048",
+      "name": "Google One",
+      "category": "Productivity",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=one.google.com",
+      "color": "#4285F4"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440049",
+      "name": "Dropbox",
+      "category": "Productivity",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=dropbox.com",
+      "color": "#0061FF"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440050",
+      "name": "iCloud+",
+      "category": "Productivity",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=icloud.com",
+      "color": "#30D5C8"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440051",
+      "name": "HelloFresh",
+      "category": "Food",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=hellofresh.com",
+      "color": "#44B61C"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440052",
+      "name": "Blue Apron",
+      "category": "Food",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=blueapron.com",
+      "color": "#004B8D"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440053",
+      "name": "Instacart+",
+      "category": "Food",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=instacart.com",
+      "color": "#FF8200"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440054",
+      "name": "Uber One",
+      "category": "Services",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=uber.com",
+      "color": "#000000"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440055",
+      "name": "Lyft Pink",
+      "category": "Services",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=lyft.com",
+      "color": "#FF00BF"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440056",
+      "name": "DoorDash DashPass",
+      "category": "Food",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=doordash.com",
+      "color": "#FF3008"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440057",
+      "name": "Grubhub+",
+      "category": "Food",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=grubhub.com",
+      "color": "#F63440"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440058",
+      "name": "Walmart+",
+      "category": "Shopping",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=walmart.com",
+      "color": "#0071CE"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440059",
+      "name": "Costco Membership",
+      "category": "Shopping",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=costco.com",
+      "color": "#E51937"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440060",
+      "name": "Target Circle 360",
+      "category": "Shopping",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=target.com",
+      "color": "#CC0000"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440061",
+      "name": "Peloton Guide",
+      "category": "Health",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=onepeloton.com",
+      "color": "#FF0000"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440062",
+      "name": "Strava Subscription",
+      "category": "Health",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=strava.com",
+      "color": "#FC6124"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440063",
+      "name": "Headspace",
+      "category": "Health",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=headspace.com",
+      "color": "#FF8200"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440064",
+      "name": "Calm",
+      "category": "Health",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=calm.com",
+      "color": "#4A90E2"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440065",
+      "name": "MyFitnessPal Premium",
+      "category": "Health",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=myfitnesspal.com",
+      "color": "#0066EE"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440066",
+      "name": "Fitbit Premium",
+      "category": "Health",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=fitbit.com",
+      "color": "#00B0B9"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440067",
+      "name": "Whoop",
+      "category": "Health",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=whoop.com",
+      "color": "#000000"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440068",
+      "name": "NordVPN",
+      "category": "Privacy",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=nordvpn.com",
+      "color": "#004B8D"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440069",
+      "name": "ExpressVPN",
+      "category": "Privacy",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=expressvpn.com",
+      "color": "#E51937"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440070",
+      "name": "Surfshark",
+      "category": "Privacy",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=surfshark.com",
+      "color": "#00D182"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440071",
+      "name": "1Password",
+      "category": "Privacy",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=1password.com",
+      "color": "#0094E3"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440072",
+      "name": "LastPass",
+      "category": "Privacy",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=lastpass.com",
+      "color": "#D32D27"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440073",
+      "name": "Dashlane",
+      "category": "Privacy",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=dashlane.com",
+      "color": "#0E353D"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440074",
+      "name": "The New York Times",
+      "category": "News",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=nytimes.com",
+      "color": "#000000"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440075",
+      "name": "The Wall Street Journal",
+      "category": "News",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=wsj.com",
+      "color": "#000000"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440076",
+      "name": "Washington Post",
+      "category": "News",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=washingtonpost.com",
+      "color": "#000000"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440077",
+      "name": "Medium",
+      "category": "News",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=medium.com",
+      "color": "#000000"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440078",
+      "name": "Substack",
+      "category": "News",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=substack.com",
+      "color": "#FF6719"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440079",
+      "name": "Patreon",
+      "category": "Social",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=patreon.com",
+      "color": "#000000"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440080",
+      "name": "OnlyFans",
+      "category": "Social",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=onlyfans.com",
+      "color": "#008AFF"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440081",
+      "name": "Bumble Premium",
+      "category": "Social",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=bumble.com",
+      "color": "#FFC629"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440082",
+      "name": "Tinder Gold",
+      "category": "Social",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=tinder.com",
+      "color": "#FF6036"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440083",
+      "name": "Hinge+",
+      "category": "Social",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=hinge.co",
+      "color": "#000000"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440084",
+      "name": "Surfline Premium",
+      "category": "Services",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=surfline.com",
+      "color": "#0066FF"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440085",
+      "name": "AllTrails+",
+      "category": "Services",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=alltrails.com",
+      "color": "#008F00"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440086",
+      "name": "Uber One",
+      "category": "Services",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=uber.com",
+      "color": "#000000"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440087",
+      "name": "Chegg Study",
+      "category": "Education",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=chegg.com",
+      "color": "#FF7900"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440088",
+      "name": "Quizlet Plus",
+      "category": "Education",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=quizlet.com",
+      "color": "#4257B2"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440089",
+      "name": "Codecademy Pro",
+      "category": "Development",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=codecademy.com",
+      "color": "#1F4068"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440090",
+      "name": "Pluralsight",
+      "category": "Development",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=pluralsight.com",
+      "color": "#F05A28"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440091",
+      "name": "Udemy for Business",
+      "category": "Education",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=udemy.com",
+      "color": "#A435F0"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440092",
+      "name": "Ancestry.com",
+      "category": "Services",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=ancestry.com",
+      "color": "#818D16"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440093",
+      "name": "23andMe Plus",
+      "category": "Services",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=23andme.com",
+      "color": "#00A9E0"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440094",
+      "name": "Adobe Premiere Pro",
+      "category": "Design",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=adobe.com",
+      "color": "#FF0000"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440095",
+      "name": "After Effects",
+      "category": "Design",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=adobe.com",
+      "color": "#FF0000"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440096",
+      "name": "Lightroom",
+      "category": "Design",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=adobe.com",
+      "color": "#FF0000"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440097",
+      "name": "Zoom Pro",
+      "category": "Business",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=zoom.us",
+      "color": "#2D8CFF"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440098",
+      "name": "LogMeIn",
+      "category": "Business",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=logmein.com",
+      "color": "#00A8E0"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440099",
+      "name": "GoToMeeting",
+      "category": "Business",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=gotomeeting.com",
+      "color": "#FF8F00"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440100",
+      "name": "Wix",
+      "category": "Development",
+      "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=wix.com",
+      "color": "#000000"
+    }
+  ]
+}

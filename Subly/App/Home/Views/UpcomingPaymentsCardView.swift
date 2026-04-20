@@ -18,9 +18,30 @@ struct UpcomingPaymentsCardView: View {
                             .fill(Color(uiColor: Colors.gray500).opacity(0.2))
                             .frame(width: 45, height: 45)
                         
-                        Image(systemName: "movieclapper.fill")
-                            .font(.system(size: 20))
-                            .foregroundStyle(Color(uiColor: Colors.secondary500))
+                        if let path = service.pathURL, let url = URL(string: path) {
+                            AsyncImage(url: url) { phase in
+                                switch phase {
+                                case .success(let image):
+                                    image
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 32, height: 32)
+                                        .clipShape(RoundedRectangle(cornerRadius: 8))
+                                case .failure(_):
+                                    Image(systemName: "app.badge.fill")
+                                        .foregroundStyle(.gray)
+                                case .empty:
+                                    ProgressView()
+                                        .scaleEffect(0.8)
+                                @unknown default:
+                                    EmptyView()
+                                }
+                            }
+                            .id(service.id)
+                        } else {
+                            Image(systemName: "app.badge.fill")
+                                .foregroundStyle(.gray)
+                        }
                     }
                     
                     VStack(alignment: .leading, spacing: 4) {
