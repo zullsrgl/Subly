@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "Subly.png",
+      "filename" : "Subly.jpeg",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
@@ -13,7 +13,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "Subly 1.png",
+      "filename" : "Subly 1.jpeg",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
@@ -25,7 +25,7 @@
           "value" : "tinted"
         }
       ],
-      "filename" : "Subly 2.png",
+      "filename" : "Subly 2.jpeg",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
