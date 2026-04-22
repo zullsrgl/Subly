@@ -699,6 +699,13 @@
       "category": "Development",
       "pathURL": "https://www.google.com/s2/favicons?sz=128&domain=wix.com",
       "color": "#000000"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440101",
+      "name": "Other",
+      "category": "Other",
+      "pathURL": "",
+      "color": "#666666"
     }
   ]
 }
