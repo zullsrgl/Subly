@@ -11,8 +11,9 @@ struct AnalysisCategorieView: View {
     let name: String
     let icon: String
     let count: Int
-    let percentage: Int
+    let percentage: Double
     let color: Color
+    
     var body: some View {
         VStack(spacing: 12) {
             HStack(spacing: 15) {
@@ -38,7 +39,7 @@ struct AnalysisCategorieView: View {
                 
                 Spacer()
                 
-                Text("%\(percentage)")
+                Text("%\(String(format: "%.2f", percentage))")
                     .font(.system(size: 16, weight: .bold, design: .rounded))
                     .foregroundStyle(.white)
             }

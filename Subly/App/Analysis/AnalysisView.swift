@@ -18,52 +18,61 @@ struct AnalysisView: View {
     let categoryIcons: [String: String] = ["Stream": "play.tv.fill", "Music": "music.note","Shopping": "cart.fill","Design": "paintpalette.fill",  "AI": "sparkles", "Education": "graduationcap.fill","Gaming": "gamecontroller.fill","Social": "person.2.fill",  "Productivity": "checklist", "Health": "heart.fill", "Food": "fork.knife","Privacy": "shield.lefthalf.filled", "Business": "briefcase.fill", "Development": "terminal.fill", "News": "newspaper.fill",  "Services": "square.stack.3d.up.fill"]
     
     var body: some View {
-        ScrollView{
-            ScrollView {
-                VStack(spacing: 20) {
-                    HStack {
-                        ForEach(periods, id: \.self) { period in
-                            Button {
-                                withAnimation(.spring(response: 0.4, dampingFraction: 0.75)) {
-                                    selectedPeriod = period
+        ScrollView {
+            HStack {
+                ForEach(periods, id: \.self){ period in
+                    Button {
+                        withAnimation(.spring(response: 0.4, dampingFraction: 0.75)) {
+                            selectedPeriod = period
+                        }
+                    } label: {
+                        Text(period)
+                            .font(.system(size: 13, weight: .bold))
+                            .foregroundStyle(selectedPeriod == period ? .white : .gray)
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 10)
+                            .background(
+                                ZStack {
+                                    if selectedPeriod == period {
+                                        RoundedRectangle(cornerRadius: 10)
+                                            .fill(Color.white.opacity(0.1))
+                                            .matchedGeometryEffect(id: "bg", in: animation)
+                                    }
                                 }
-                            } label: {
-                                Text(period)
-                                    .font(.system(size: 13, weight: .bold))
-                                    .foregroundStyle(selectedPeriod == period ? .white : .gray)
-                                    .frame(maxWidth: .infinity)
-                                    .padding(.vertical, 10)
-                                    .background(
-                                        ZStack {
-                                            if selectedPeriod == period {
-                                                RoundedRectangle(cornerRadius: 10)
-                                                    .fill(Color.white.opacity(0.1))
-                                                    .matchedGeometryEffect(id: "bg", in: animation)
-                                            }
-                                        }
-                                    )
-                            }
-                        }
-                    }
-                    .padding(4)
-                    .background(RoundedRectangle(cornerRadius: 14).fill(Color.white.opacity(0.05)))
-                    .padding(.horizontal)
-                    
-                    VStack(spacing: 12) {
-                        ForEach(viewModel.categories, id: \.self) { category in
-                            AnalysisCategorieView(
-                                name: category,
-                                icon: categoryIcons[category] ?? "square.grid.2x2.fill",
-                                count: 9,
-                                percentage: 25,
-                                color: .orange
                             )
-                        }
                     }
-                    .padding(.horizontal)
                 }
-                .padding(.vertical)
             }
+            .padding(4)
+            .background(RoundedRectangle(cornerRadius: 14).fill(Color.white.opacity(0.05)))
+            .padding(.horizontal)
+            
+            
+            VStack(spacing: 12) {
+                let sortedCategories = viewModel.categories.sorted { cat1, cat2 in
+                        let count1 = services.filter { $0.category == cat1 }.count
+                        let count2 = services.filter { $0.category == cat2 }.count
+                        return count1 > count2
+                    }
+                
+                ForEach(sortedCategories, id: \.self) { category in
+                        let filtered = services.filter { $0.category == category }
+                        let count = filtered.count
+                        let total = services.count
+                        let percentage = total > 0 ? (Double(count) / Double(total) * 100) : 0
+                        let hexColor = filtered.first?.color ?? "#3A3A3C"
+                        
+                        AnalysisCategorieView(
+                            name: category,
+                            icon: categoryIcons[category] ?? "square.grid.2x2.fill",
+                            count: count,
+                            percentage: percentage,
+                            color: Color(hex: hexColor)
+                        )
+                    }
+            }
+            .padding(.horizontal)
+            
         }
         .navigationTitle("Portfolio")
         .navigationBarTitleDisplayMode(.inline)

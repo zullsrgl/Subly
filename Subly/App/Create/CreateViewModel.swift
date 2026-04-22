@@ -19,6 +19,8 @@ final class CreateViewModel: ObservableObject{
     
     @Published var selectedServiceName: String?
     @Published var selectedServicepath: String?
+    @Published var selectedServiceCategory: String?
+    @Published var selectedServiceColor: String?
     
     private func saveNewServices(context: ModelContext){
         let cleanedPayment = servicesPayment.replacingOccurrences(of: ",", with: ".")
@@ -27,12 +29,14 @@ final class CreateViewModel: ObservableObject{
         let newServices = ServicesModel(
             id: UUID(),
             name: servicesName,
+            category: selectedServiceCategory,
             path: selectedServicepath ?? "",
             price: priceValue,
             current: selectedCurrency,
             priceCycle: selectedCycle,
             date: nextPaymentDate,
-            isReminderEnabled: isReminderEnabled)
+            isReminderEnabled: isReminderEnabled,
+            color: selectedServiceColor)
         
         ServicesManager.shared.saveNewServices(services: newServices, context: context)
     }
@@ -69,7 +73,8 @@ final class CreateViewModel: ObservableObject{
             self.selectedServicepath = service.pathURL ?? ""
             self.selectedServiceName = name
             self.servicesName = name
+            self.selectedServiceColor = service.color ?? ""
+            self.selectedServiceCategory = service.category ?? ""
         }
     }
 }
-

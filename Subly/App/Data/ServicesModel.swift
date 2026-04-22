@@ -12,22 +12,26 @@ import Foundation
 class ServicesModel {
     var id: UUID
     var name: String?
+    var category: String?
     var pathURL: String?
     var price: Double?
     var current: String?
     var priceCycle: String?
     var date: Date?
     var isReminderEnabled: Bool?
+    var color: String?
     
-    init(id: UUID, name: String? = nil, path: String? = nil, price: Double? = nil, current: String? = nil, priceCycle: String? = nil, date: Date? = nil, isReminderEnabled: Bool? = nil) {
+    init(id: UUID, name: String? = nil, category: String? = nil, path: String? = nil, price: Double? = nil, current: String? = nil, priceCycle: String? = nil, date: Date? = nil, isReminderEnabled: Bool? = nil, color: String? = nil) {
         self.id = id
         self.name = name
+        self.category = category 
         self.pathURL = path
         self.price = price
         self.current = current
         self.priceCycle = priceCycle
         self.date = date
         self.isReminderEnabled = isReminderEnabled
+        self.color = color
     }
     
 }
