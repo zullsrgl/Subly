@@ -81,7 +81,7 @@ struct UpcomingPaymentsCardView: View {
                     RoundedRectangle(cornerRadius: 16)
                         .stroke(Color.white.opacity(0.08), lineWidth: 1)
                 )
-                .padding(.horizontal, 8)
+                
             }
         }
         

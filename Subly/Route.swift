@@ -10,6 +10,7 @@ enum Route: Hashable {
     case home
     case notifications
     case analysis
+    case detail(categoryName: String)
 }
 
 enum ServiceRoute: Hashable {
@@ -46,7 +47,7 @@ struct MainTabView: View {
             .tag(0)
             
             NavigationStack(path: $analysisPath) {
-                AnalysisView()
+                AnalysisView( path: $analysisPath)
                     .navigationDestination(for: Route.self) { route in
                         viewFactory(for: route)
                     }
@@ -71,7 +72,9 @@ struct MainTabView: View {
         case .home:
             EmptyView()
         case .analysis:
-            AnalysisView()
+            AnalysisView(path: $analysisPath)
+        case .detail(let categoryName):
+            DetailView(categoryName: categoryName)
         }
     }
     @ViewBuilder
